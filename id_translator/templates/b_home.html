@@ -1,0 +1,24 @@
+{% import "bootstrap/wtf.html" as wtf %}
+
+{%- extends "base.html" %}
+
+
+{% block content %}
+   <div class="container">
+       <div class="row">
+           <div class="col-md-12">
+      <div class="jumbotron">
+        <h1>ID Translator Services</h1>
+        <p>Login for editing and uploading features</p>
+      </div>
+           </div>
+       </div>
+       <div class="row">
+   <div class="col-md-12">
+       {{form|render_vform()}}
+
+   </div>
+       </div>
+
+       </div>
+{%- endblock %}

@@ -1,0 +1,33 @@
+{
+  "mongo": {
+    "URI": "localhost:27017",
+    "DB": "id_test",
+    "COLLECTION_MAIN": "ID_TEST_REG_MAIN",
+    "COLLECTION_TEMP": "",
+    "COLLECTION_LINK": "",
+    "SSL": "",
+    "CERT": ""
+  },
+  "keycloak": {
+    "KC_SERVER": "http://ga4ghdev01.bcgsc.ca:8080",
+    "KC_REALM": "id_translator",
+    "OIDC_PROVIDER": "{}/auth/realms/{}",
+    "OIDC_CLIENT": "gsc",
+    "OIDC_AUDIENCE": "account",
+    "OIDC_CLIENT_SECRET": "3282f805-4452-469b-b6a3-280e3bfe7bfc",
+    "OIDC_AUTHZ_ENDPOINT": "{}/auth/realms/{}/protocol/openid-connect/auth",
+    "OIDC_TOKEN_ENDPOINT": "{}/auth/realms/{}/protocol/openid-connect/token",
+    "OIDC_TOKEN_REV_ENDPOINT": "{}/auth/realms/{}/protocol/protocol/openid-connect/token/introspect",
+    "OIDC_USERINFO_ENDPOINT": "{}/auth/realms/{}/protocol/protocol/openid-connect/userinfo",
+    "FORMAT_ENDPOINTS": [
+      "OIDC_PROVIDER", "OIDC_AUTHZ_ENDPOINT",
+      "OIDC_TOKEN_ENDPOINT", "OIDC_TOKEN_REV_ENDPOINT", "OIDC_USERINFO_ENDPOINT"
+    ]
+  },
+  "project": {
+    "IDS_TO_RETURN": [
+      "TF4CN_ID_TEST", "PROFYLE_ID_TEST", "lims_pt_id"
+    ],
+    "PRIMARY_KEY": "lims_pt_id"
+  }
+}

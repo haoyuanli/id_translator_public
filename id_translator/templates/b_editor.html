@@ -1,0 +1,80 @@
+{% import "bootstrap/wtf.html" as wtf %}
+
+
+
+{%- extends "base.html" %}
+
+
+
+{% block scripts %}
+{{super()}}
+<script src="{{url_for('static', filename='js/panel.js')}}"></script>
+<script src="{{url_for('static', filename='js/editor.js')}}"></script>
+
+{% endblock %}
+
+
+
+
+
+{% block content %}
+
+   <div class="container">
+       <div class="row">
+           <div class="col-md-7">
+                <div class="jumbotron">
+                    <h2>ID Translator Editor</h2>
+                    <small> Edits, additions and deletions will only be permanent once
+                    the <b>Update</b> button is pressed. </small>
+                    <p id="primarykey" hidden>{{pkey}}</p>
+                </div>
+           </div>
+           <div class="col-md-5">
+               <div class="row">
+                   <div class="col-md-12" id="db-info">
+                       <div class="panel panel-info">
+                           <div class="panel-heading">
+                               <h3 class="panel-title"> Database Info </h3>
+                           </div>
+                           <ul class="list-group" id="panel-list"></ul>
+                       </div>
+                    </div>
+               </div>
+               <div class="row">
+                   <div class="col-md-12">
+                       <div data-alerts="alerts"  data-ids="edit-alert" data-usebullets=false data-fade="3000"></div>
+                   </div>
+               </div>
+           </div>
+
+
+
+       </div>
+      {% if table %}
+      <div class="row">
+       <form class="form" method="POST">
+         <div class="col-md-12">
+           {{ table }}
+
+         <button id="upload-btn" class="btn btn-primary" name="upload"  style="margin-bottom: 20px;">Update Record</button>
+         <button id="add-btn" class="btn btn-primary" name="add"  style="margin-bottom: 20px;">Add Row</button>
+         <button id="unlock-btn" class="btn btn-warning" name="unlock"  style="margin-bottom: 20px;">Unlock PK</button>
+
+         </div>
+       </form>
+      </div>
+
+      {% endif %}
+
+      <div class="row">
+        <div class="col-md-12">
+        <div data-alerts="alerts"  data-ids="feedback-alert" data-fade="3000"></div>
+
+       {{eform|render_vform()}}
+
+      </div>
+        </div>
+
+   </div>
+{%- endblock %}
+

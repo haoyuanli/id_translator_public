@@ -1,0 +1,26 @@
+---
+swagger: "2.0"
+info:
+  description: Translation tool for project IDs
+  version: 0.0.1
+  title: id_translator API
+  contact:
+    email: dnaidoo@bcgsc.ca
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+basePath: /translate
+tags:
+- name: admins
+  description: Secured Admin-only calls
+- name: developers
+  description: Operations available to regular developers
+schemes:
+- http
+consumes:
+- application/json
+produces:
+- application/json
+paths: {}
+
+definitions: {}

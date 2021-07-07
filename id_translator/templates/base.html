@@ -1,0 +1,61 @@
+{%- extends "bootstrap/base.html" %}
+
+{% block title %}Id Translator Bootstrapped!{% endblock %}
+
+{% import "bootstrap/fixes.html" as fixes %}
+
+{# Then, inside the head block, we apply these. To not replace the header,
+   ``super()`` is used: #}
+{% block head %}
+{{super()}}
+
+
+
+
+{#- Docs: http://pythonhosted.org/Flask-Bootstrap/macros.html#fixes
+   The sample application already contains the required static files. #}
+{{fixes.ie8()}}
+{%- endblock %}
+
+{# Adding our own CSS files is also done here. Check the documentation at
+   http://pythonhosted.org/Flask-Bootstrap/basic-usage.html#available-blocks
+   for an overview. #}
+{% block styles -%}
+    {{super()}}  {# do not forget to call super or Bootstrap's own stylesheets
+                    will disappear! #}
+    <link rel="stylesheet" type="text/css"
+          href="{{url_for('static', filename='sample.css')}}">
+    <link rel="stylesheet" type="text/css"
+          href="{{url_for('static', filename='jquery-ui-1.10.0.custom.css')}}">
+    <link rel="shortcut icon"
+          href="{{ url_for('static', filename='favicon.ico') }}">
+{% endblock %}
+
+
+{% block scripts %}
+{{super()}}
+<script
+			  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+			  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+			  crossorigin="anonymous"></script>
+<script src="{{url_for('static', filename='js/bsAlerts.js')}}"></script>
+
+<link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet"/>
+<script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
+
+{% endblock %}
+
+
+{% block content %}
+
+{{super()}}
+
+
+{% endblock %}
+
+
+
+{# Finally, round things out with navigation #}
+{% block navbar %}
+{{nav.frontend_top.render(renderer='alerts')}}
+{% endblock %}

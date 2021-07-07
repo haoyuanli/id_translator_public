@@ -1,0 +1,52 @@
+{% import "bootstrap/wtf.html" as wtf %}
+
+{%- extends "base.html" %}
+
+{% block scripts %}
+{{super()}}
+<script src="{{url_for('static', filename='js/panel.js')}}"></script>
+<script src="{{url_for('static', filename='js/uploader_gsc.js')}}"></script>
+{% endblock %}
+
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" type="text/css"
+      href="{{url_for('static', filename='uploader.css')}}">
+{% endblock %}
+
+
+{% block content %}
+   <div class="container">
+       <div class="col-md-7">
+           <div class="jumbotron">
+            <h1>Document Uploader</h1>
+            </div>
+       </div>
+       <div class="col-md-5" id="db-info">
+           <div class="panel panel-info">
+               <div class="panel-heading">
+                   <h3 class="panel-title"> Database Info </h3>
+               </div>
+               <ul class="list-group" id="panel-list">
+
+               </ul>
+           </div>
+       </div>
+
+   <div class="col-md-12">
+       <div data-alerts="alerts"  data-ids="feedback-alert" data-fade="3000" data-usebullets=false></div>
+       <div data-alerts="alerts"  data-ids="permanent-alert" data-usebullets=false></div>
+
+   </div>
+   <div class="col-md-12">
+
+       {{form|render_vform()}}
+
+   </div>
+   <div class="col-md-12"><br></div>
+   <div class="col-md-12" id="table-space">
+   </div>
+
+       </div>
+{%- endblock %}

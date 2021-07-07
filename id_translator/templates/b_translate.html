@@ -1,0 +1,52 @@
+{% import "bootstrap/wtf.html" as wtf %}
+
+{%- extends "base.html" %}
+
+{% block scripts %}
+{{super()}}
+<script src="{{url_for('static', filename='js/panel.js')}}"></script>
+<script src="{{url_for('static', filename='js/translation.js')}}"></script>
+
+
+{% endblock %}
+
+{% block content %}
+   <div class="container">
+       <div class="row">
+       <div class="col-md-7">
+           <div class="jumbotron">
+            <h1> ID Translation </h1>
+            </div>
+       </div>
+       <div class="col-md-5" id="db-info">
+           <div class="panel panel-info">
+               <div class="panel-heading">
+                   <h3 class="panel-title"> Database Info </h3>
+               </div>
+               <ul class="list-group" id="panel-list">
+
+               </ul>
+           </div>
+       </div>
+       </div>
+       <div class="row">
+       <div class="col-md-12">
+          <div data-alerts="alerts"  data-ids="permanent-alert" data-usebullets=false></div>
+       </div>
+       </div>
+       <div class="row">
+       <div class="col-md-7">
+            {{form|render_vform()}}
+
+       </div>
+
+
+       <div class="cold-md-5" id="term-space"></div>
+       </div>
+       <div class="col-md-12"><br></div>
+       <div class="row">
+       <div class="col-md-12" id="table-space">
+       </div>
+       </div>
+       </div>
+{%- endblock %}

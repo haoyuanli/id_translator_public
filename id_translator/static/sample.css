@@ -1,0 +1,30 @@
+.jumbotron {
+  margin-top: 1em;  // add a little space
+}
+
+.row.display-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+.row.display-flex > [class*='col-'] {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown {
+   display:inline-block;
+}
+
+.ui-autocomplete {
+   max-height: 200px;
+   overflow-y: auto;
+   /* prevent horizontal scrollbar */
+   overflow-x: hidden;
+   /* add padding to account for vertical scrollbar */
+   padding-right: 20px;
+}
+
+body.wait *, body.wait
+{
+    cursor: progress !important;
+}

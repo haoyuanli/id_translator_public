@@ -1,0 +1,33 @@
+{
+  "mongo": {
+    "URI": "",
+    "DB": "",
+    "COLLECTION_MAIN": "",
+    "COLLECTION_TEMP": "",
+    "COLLECTION_LINK": "",
+    "SSL": "",
+    "CERT": ""
+  },
+  "keycloak": {
+    "KC_SERVER": "",
+    "KC_REALM": "",
+    "OIDC_PROVIDER": "{}/auth/realms/{}",
+    "OIDC_CLIENT": "",
+    "OIDC_AUDIENCE": "",
+    "OIDC_CLIENT_SECRET": "",
+    "OIDC_AUTHZ_ENDPOINT": "{}/auth/realms/{}/protocol/openid-connect/auth",
+    "OIDC_TOKEN_ENDPOINT": "{}/auth/realms/{}/protocol/openid-connect/token",
+    "OIDC_TOKEN_REV_ENDPOINT": "{}/auth/realms/{}/protocol/protocol/openid-connect/token/introspect",
+    "OIDC_USERINFO_ENDPOINT": "{}/auth/realms/{}/protocol/protocol/openid-connect/userinfo",
+    "FORMAT_ENDPOINTS": [
+      "OIDC_PROVIDER", "OIDC_AUTHZ_ENDPOINT",
+      "OIDC_TOKEN_ENDPOINT", "OIDC_TOKEN_REV_ENDPOINT", "OIDC_USERINFO_ENDPOINT"
+    ]
+  },
+  "project": {
+    "IDS_TO_RETURN": [
+
+    ],
+    "PRIMARY_KEY": ""
+  }
+}
