@@ -161,6 +161,8 @@ viewing the site in browser
 5. Start the nginx instance, check and see if it can be viewed in browser
 
 
+#### Authors
+This application was implemented by Dashaylan Naidoo and Zoltan Bozoky.
 
 
 
